@@ -2,7 +2,10 @@ import { Game } from "./game.js";
 
 
 window.onload = function() {
-
+    let lastTime = 0;
+    let current = 0;
+    const fps = 90;
+    const msPerFrame = 1000 / fps;
     const game = new Game(1920, 1080);
 
     document.addEventListener("keydown", (e) => {
@@ -23,10 +26,14 @@ window.onload = function() {
     setInterval(() => game.moneyPerSecond(), 1000)
     setInterval(() => game.passiveIncome(), 1000);
   
-    function render() {
-        game.update();
-        game.draw();
+    function render(current) {
         requestAnimationFrame(render)
+        let deltaTime = current - lastTime;
+        game.draw();
+        if (deltaTime < msPerFrame) return;
+        lastTime = current;
+        game.update();
+
     }
     render();
 

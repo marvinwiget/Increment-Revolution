@@ -17,8 +17,8 @@ export class Display {
     }
 
     update() {
-        this.displayScore.innerHTML = "You have $" + Math.floor(this.player.score);
-        this.displayCurrentMultiplier.innerHTML = "Current multiplier: " + (Math.floor(this.player.incomeMult * this.player.comboMult *100)) / 100 + "x";
+        this.displayScore.innerHTML = "You have $" + Math.floor(this.player.score) + ", and " + this.player.prestiges + " prestige(s)";
+        this.displayCurrentMultiplier.innerHTML = "Current multiplier: " + (Math.floor(this.player.totalMult *100)) / 100 + "x";
         this.displayMPD.innerHTML = "Generating $" + (Math.floor(this.player.mpd*100)) /100 + " per second";
         this.displayCombo.innerHTML = this.player.combo + "X COMBO!";
         if (this.player.combo < 4) this.displayCombo.style.visibility = "hidden";

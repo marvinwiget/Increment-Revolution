@@ -126,7 +126,6 @@ export class Game {
                 if (this.player.score >= this.prestigeCost[this.player.prestiges]) {
                     this.player.prestiges++;
                     this.player.prestigeReset();
-                    this.arrowValue = 1;
                     if (!this.soundMuted) this.prestigeSound.play();
                     this.updatePrestigeButton();
                 }
