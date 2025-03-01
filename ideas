@@ -1,0 +1,38 @@
+General Notes for the game:
+- incremental clicker game where arrows come and you have to press them to get money. When pressing correct arrows, character dances (multiple dances)
+- vibe like DanceDanceRevolution
+
+
+To do list:
+- achievements
+- sound (mute button for music and sound)
+- rebirth
+- multipliers
+- combo modus with increased multipliers
+- arrow colours
+
+achievemnts:
+- rebirth once
+- rebirt max times
+- get a multiplier of 200x
+- integer overflow!!!
+
+Structure of the game:
+- class player
+  - boolean active // if player is actively player
+  - int score // the amount of money/score the player has
+  - int income // how much per tick gets added to score
+  - int incomeMult // income multiplier
+  - object Upgades (maybe array of objects)
+    - upgrade name
+    - upgrade income
+    - upgrade incomeMult
+
+- class Arrow
+  - int speed
+  - int value
+  - direction (up, left, right down)
+  - boolean success
+
+
+
