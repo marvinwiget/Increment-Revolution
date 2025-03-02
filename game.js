@@ -19,8 +19,9 @@ export class Game {
         this.upgrade1Price = 10;
         this.upgrade2Price = 5;
         this.upgrade3Price = 20;
+        this.arrowLeft = true;
 
-        this.soundMuted = true;
+        this.soundMuted = false
 
         this.prestigeSound = new Audio("./assets/prestige.wav");
         this.buySound = new Audio("./assets/buy.wav");
@@ -153,11 +154,16 @@ export class Game {
         allowedInput: ["ArrowUp", "ArrowLeft", "ArrowDown", "ArrowRight"],
         onInputCooldown: false,
         reactionTime: 100,
-        inputCooldown: 750
+        inputCooldown: 250
     }
     createArrows() {
         let x = Math.floor(Math.random() * 4);
-        let y = Math.floor(Math.random() * 2);
+        //let y = Math.floor(Math.random() * 2);
+        let y;
+        if (this.arrowLeft) y = 0;
+        else y = 1;
+        this.arrowLeft = !this.arrowLeft;
+        
         this.arrows.push(new Arrow(this,this.player,x,this.arrowSpeed + 0.3 * this.player.combo,y,this.arrowValue));
         
     }

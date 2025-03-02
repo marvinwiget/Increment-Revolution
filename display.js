@@ -14,6 +14,8 @@ export class Display {
         this.achieve3 = document.getElementById("achievement3");
         this.achieve4 = document.getElementById("achievement4");
 
+        
+
     }
 
     update() {

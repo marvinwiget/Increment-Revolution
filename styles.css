@@ -11,7 +11,7 @@ body {
 }
 
 #currentMultiplier {
-    margin-bottom: -25px;
+    margin-bottom: -35px;
 }
 
 canvas {
@@ -30,8 +30,9 @@ canvas {
     border: 4px solid;
     border-radius: 30px;
     display:inline-block;
-    padding:15px;
+    padding:12px;
     min-width: 700px;
+    margin: -12px;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -48,7 +49,8 @@ canvas {
     border: 4px solid black;
     border-radius: 30px;
     display:inline-block;
-    padding:15px;
+    padding:12px;
+    margin: -12px;
     min-width: 700px;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -78,7 +80,7 @@ canvas {
 }
 
 #combo {
-    color: green;
+    color: rgb(253, 0, 0);
     font-style: italic;
 }
 
@@ -87,8 +89,9 @@ canvas {
     border: 4px solid;
     border-radius: 30px;
     display: inline-block;
-    padding:15px;
+    padding:12px;
     min-width: 700px;
+    margin: -12px;
 }
 
 

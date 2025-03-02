@@ -35,9 +35,10 @@ export class Arrow {
 
             // check if out of bounds
             if (this.x > this.zoneStart + (this.zoneEnd - this.zoneStart) / 6) {
-                if (!this.game.soundMuted) this.game.failSound.play();
-                this.player.combo = 0;
                 this.despawn = true;
+                if (!this.game.soundMuted && this.player.combo > 0) this.game.failSound.play();
+                this.player.combo = 0;
+                return;
             }
         } else {
             // move
@@ -48,20 +49,22 @@ export class Arrow {
 
             // check if out of bounds
             if (this.x < this.zoneStart + (this.zoneEnd - this.zoneStart) / 6) {
-                if (!this.game.soundMuted) this.game.failSound.play();
-                this.player.combo = 0;
                 this.despawn = true;
+                if (!this.game.soundMuted && this.player.combo > 0) this.game.failSound.play();
+                this.player.combo = 0;
+                return;
             }
         }
         if (this.inZone && ((this.game.input.activeInput[0] == "ArrowRight" && this.direction == 0) 
             || (this.game.input.activeInput[0] == "ArrowLeft" && this.direction == 1) 
             || (this.game.input.activeInput[0] == "ArrowUp" && this.direction == 2) 
             || (this.game.input.activeInput[0] == "ArrowDown" && this.direction == 3))) {
+                this.despawn = true;
                 this.player.add(this.value);
                 this.player.combo++;
                 if (!this.game.soundMuted) this.game.hitSound.play();
-                this.despawn = true;
         }
+        this.speed += 0.1;
     }
     static drawBackground(ctx) {
         ctx.drawImage(image,0,0,720,100,0,0,720,100);

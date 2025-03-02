@@ -22,7 +22,7 @@ window.onload = function() {
         }
     })
 
-    setInterval(() => game.createArrows(), 1000);
+    setInterval(() => game.createArrows(), 600);
     setInterval(() => game.moneyPerSecond(), 1000)
     setInterval(() => game.passiveIncome(), 1000);
   
